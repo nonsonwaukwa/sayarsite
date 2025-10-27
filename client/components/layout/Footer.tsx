@@ -9,22 +9,45 @@ export default function Footer() {
         <div>
           <div className="flex items-center gap-2">
             <span className="inline-flex h-8 w-8 items-center justify-center rounded-md bg-gradient-to-br from-primary to-primary/70 shadow-sm">
-              <svg viewBox="0 0 24 24" className="h-5 w-5 text-white" fill="currentColor"><path d="M3 5h18v2H3zM3 11h14v2H3zM3 17h10v2H3z"/></svg>
+              <svg
+                viewBox="0 0 24 24"
+                className="h-5 w-5 text-white"
+                fill="currentColor"
+              >
+                <path d="M3 5h18v2H3zM3 11h14v2H3zM3 17h10v2H3z" />
+              </svg>
             </span>
             <span className="font-extrabold tracking-tight text-xl">Sayar</span>
           </div>
           <p className="mt-4 text-sm text-muted-foreground max-w-sm">
-            Sayar turns WhatsApp into a commerce engine for Nigerian SMEs—automated orders, Naira payments, and simple order management.
+            Sayar turns WhatsApp into a commerce engine for Nigerian
+            SMEs—automated orders, Naira payments, and simple order management.
           </p>
         </div>
         <div className="grid grid-cols-2 gap-6 text-sm">
           <div>
             <h4 className="font-semibold mb-3">Company</h4>
             <ul className="space-y-2">
-              <li><Link to="/products" className="hover:underline">Features</Link></li>
-              <li><Link to="/track" className="hover:underline">Dashboard</Link></li>
-              <li><Link to="/faq" className="hover:underline">FAQs</Link></li>
-              <li><Link to="/blog" className="hover:underline">Blog</Link></li>
+              <li>
+                <Link to="/products" className="hover:underline">
+                  Features
+                </Link>
+              </li>
+              <li>
+                <Link to="/track" className="hover:underline">
+                  Dashboard
+                </Link>
+              </li>
+              <li>
+                <Link to="/faq" className="hover:underline">
+                  FAQs
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog" className="hover:underline">
+                  Blog
+                </Link>
+              </li>
             </ul>
           </div>
           <div>
@@ -39,10 +62,22 @@ export default function Footer() {
         <div>
           <h4 className="font-semibold mb-3">Follow us</h4>
           <div className="flex gap-3 text-muted-foreground">
-            <a href="#" aria-label="Twitter" className="hover:text-foreground"><Twitter size={20} /></a>
-            <a href="#" aria-label="Facebook" className="hover:text-foreground"><Facebook size={20} /></a>
-            <a href="#" aria-label="Instagram" className="hover:text-foreground"><Instagram size={20} /></a>
-            <a href="#" aria-label="Linkedin" className="hover:text-foreground"><Linkedin size={20} /></a>
+            <a href="#" aria-label="Twitter" className="hover:text-foreground">
+              <Twitter size={20} />
+            </a>
+            <a href="#" aria-label="Facebook" className="hover:text-foreground">
+              <Facebook size={20} />
+            </a>
+            <a
+              href="#"
+              aria-label="Instagram"
+              className="hover:text-foreground"
+            >
+              <Instagram size={20} />
+            </a>
+            <a href="#" aria-label="Linkedin" className="hover:text-foreground">
+              <Linkedin size={20} />
+            </a>
           </div>
         </div>
       </div>
