@@ -143,37 +143,29 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Sayar Overview */}
-      <section className="py-16 bg-white">
-        <div className="container grid md:grid-cols-2 gap-10 items-start">
-          <div>
-            <div className="inline-flex items-center rounded-full bg-secondary px-3 py-1 text-xs font-medium">Sayar Overview</div>
-            <h2 className="mt-3 text-3xl md:text-4xl font-extrabold tracking-tight">WhatsApp-first commerce for Nigerian SMEs</h2>
-            <p className="mt-4 text-muted-foreground">Sayar is a WhatsApp-first commerce platform that helps merchants sell, manage orders, and engage customers directly inside WhatsApp — no website or coding skills required.</p>
+      {/* Benefits */}
+      <section className="py-16">
+        <div className="container text-center">
+          <div className="inline-flex items-center rounded-full bg-secondary px-3 py-1 text-xs font-medium">Benefits</div>
+          <h2 className="mt-3 text-3xl md:text-4xl font-extrabold tracking-tight">✨ 4–5 Word Benefits</h2>
+          <p className="mt-2 text-muted-foreground max-w-2xl mx-auto">Short, tight, outcome-driven benefits that matter to merchants.</p>
 
-            <h4 className="mt-6 font-semibold">Mission</h4>
-            <p className="text-muted-foreground">Help Nigerian merchants turn WhatsApp chats into organized, automated sales.</p>
-
-            <h4 className="mt-6 font-semibold">Core features</h4>
-            <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-              <li>• WhatsApp Automation: auto-replies, order confirmation, and checkout flows.</li>
-              <li>• Smart Catalog Sync: import products and share live catalogs inside chat.</li>
-              <li>• Payments: accept Naira payments via Paystack & Korapay.</li>
-              <li>• Dashboard: track orders, customers, and GMV in one place.</li>
-            </ul>
-          </div>
-
-          <div>
-            <div className="inline-flex items-center rounded-full bg-secondary px-3 py-1 text-xs font-medium">The problem</div>
-            <h3 className="mt-3 text-2xl font-semibold">Chat commerce is messy</h3>
-            <p className="mt-3 text-muted-foreground">Over 67% of online purchases in Nigeria start as chats, but most merchants manage sales manually across messages, DMs, and spreadsheets. That leads to missed sales, scattered records and poor repeat-purchase experiences.</p>
-
-            <h4 className="mt-6 font-semibold">Why Sayar</h4>
-            <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-              <li>• Zero technical barrier — setup in minutes.</li>
-              <li>• Local focus: Naira payments, local UX & distribution.</li>
-              <li>• Automation reduces missed messages and speeds up conversions.</li>
-            </ul>
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-5 gap-4">
+            <div className="rounded-xl border border-input bg-white/5 py-6 px-4">
+              <div className="font-semibold">Sell Faster on WhatsApp</div>
+            </div>
+            <div className="rounded-xl border border-input bg-white/5 py-6 px-4">
+              <div className="font-semibold">Instant Order Confirmation</div>
+            </div>
+            <div className="rounded-xl border border-input bg-white/5 py-6 px-4">
+              <div className="font-semibold">No Missed Messages</div>
+            </div>
+            <div className="rounded-xl border border-input bg-white/5 py-6 px-4">
+              <div className="font-semibold">Seamless Checkout Flow</div>
+            </div>
+            <div className="rounded-xl border border-input bg-white/5 py-6 px-4">
+              <div className="font-semibold">Smart Customer Tracking</div>
+            </div>
           </div>
         </div>
       </section>
