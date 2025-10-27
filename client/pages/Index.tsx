@@ -20,7 +20,7 @@ export default function Index() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(1200px_600px_at_50%_-200px,rgba(253,234,200,0.9),transparent),linear-gradient(to_bottom,white,white)]" />
         <div className="container" style={{padding: "43px 32px 33px"}}>
-          <div className="grid md:grid-cols-2 items-center gap-8" style={{paddingLeft: "37px", marginTop: "-2px"}}>
+          <div className="grid md:grid-cols-2 items-center gap-8" style={{paddingLeft: "37px", margin: "-2px 0 7px"}}>
             <div>
               <div className="inline-flex items-center rounded-full bg-secondary px-3 py-1 text-xs font-medium text-foreground/70">WhatsApp-first commerce</div>
               <h1 className="mt-4 text-4xl leading-tight font-extrabold tracking-tight md:text-5xl">
