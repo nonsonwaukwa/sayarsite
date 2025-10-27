@@ -156,7 +156,7 @@ export default function Index() {
                     <Star key={idx} className="h-4 w-4 text-primary fill-primary" />
                   ))}
                 </div>
-                <p className="mt-3 text-sm text-muted-foreground">“Importa made sourcing effortless and fast. Great communication and pricing.”</p>
+                <p className="mt-3 text-sm text-muted-foreground">“Sayar made selling on WhatsApp effortless and fast. Great automation and reliable payments.”</p>
                 <div className="mt-4 text-sm font-medium">Davidchi Santos</div>
               </Card>
             ))}
