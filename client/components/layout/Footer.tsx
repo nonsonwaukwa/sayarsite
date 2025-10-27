@@ -14,7 +14,7 @@ export default function Footer() {
             <span className="font-extrabold tracking-tight text-xl">Sayar</span>
           </div>
           <p className="mt-4 text-sm text-muted-foreground max-w-sm">
-            Importa makes ordering from global suppliers simple, fast, and budget-friendly. Chat, track, and receive with ease.
+            Sayar turns WhatsApp into a commerce engine for Nigerian SMEs—automated orders, Naira payments, and simple order management.
           </p>
         </div>
         <div className="grid grid-cols-2 gap-6 text-sm">
