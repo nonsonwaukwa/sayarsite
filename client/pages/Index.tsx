@@ -20,7 +20,7 @@ export default function Index() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(1200px_600px_at_50%_-200px,rgba(253,234,200,0.9),transparent),linear-gradient(to_bottom,white,white)]" />
         <div className="container pt-14 pb-8 md:pt-20 md:pb-16">
-          <div className="grid md:grid-cols-2 items-center gap-8">
+          <div className="grid md:grid-cols-2 items-center gap-8" style={{paddingLeft: "37px", marginTop: "-2px"}}>
             <div>
               <div className="inline-flex items-center rounded-full bg-secondary px-3 py-1 text-xs font-medium text-foreground/70">WhatsApp-first commerce</div>
               <h1 className="mt-4 text-4xl leading-tight font-extrabold tracking-tight md:text-5xl">
@@ -94,10 +94,10 @@ export default function Index() {
               </div>
             </div>
           </div>
-          <div>
+          <div style={{paddingRight: "22px", margin: "0 35px 0 -4px"}}>
             <div className="inline-flex items-center rounded-full bg-secondary px-3 py-1 text-xs font-medium">Benefits</div>
-            <h2 className="mt-3 text-3xl md:text-4xl font-extrabold tracking-tight">Why Thousands Choose Sayar</h2>
-            <ul className="mt-6 space-y-4">
+            <h2 className="mt-3 text-3xl md:text-4xl font-extrabold tracking-tight">Why Choose Sayar</h2>
+            <ul className="space-y-4" style={{margin: "24px 0 0 -2px"}}>
               {[
                 { icon: <ShieldCheck className="text-primary" />, title: "WhatsApp Automation", desc: "Auto-replies, order confirmation and checkout flows inside chat." },
                 { icon: <Truck className="text-primary" />, title: "Catalog & Orders", desc: "Share live product catalogs and record orders automatically." },
