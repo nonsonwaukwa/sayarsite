@@ -20,7 +20,7 @@ export default function Header() {
           <span className="inline-flex h-8 w-8 items-center justify-center rounded-md bg-gradient-to-br from-primary to-primary/70 shadow-sm">
             <svg viewBox="0 0 24 24" className="h-5 w-5 text-white" fill="currentColor"><path d="M3 5h18v2H3zM3 11h14v2H3zM3 17h10v2H3z"/></svg>
           </span>
-          <span className="font-extrabold tracking-tight text-xl">Sayar</span>
+          <img src="https://cdn.builder.io/api/v1/image/assets%2F49abbfeca790452daf97372576a6ea68%2F35c8709fc1734797b8e8900865e4aab2?format=webp&width=800" alt="Sayar logo" className="h-8 object-contain" />
         </Link>
         <nav className="ml-6 hidden md:flex items-center gap-1">
           {nav.map((n) => (
