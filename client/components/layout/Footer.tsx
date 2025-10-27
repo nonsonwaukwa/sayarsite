@@ -21,8 +21,8 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-3">Company</h4>
             <ul className="space-y-2">
-              <li><Link to="/products" className="hover:underline">Products</Link></li>
-              <li><Link to="/track" className="hover:underline">Track Order</Link></li>
+              <li><Link to="/products" className="hover:underline">Features</Link></li>
+              <li><Link to="/track" className="hover:underline">Dashboard</Link></li>
               <li><Link to="/faq" className="hover:underline">FAQs</Link></li>
               <li><Link to="/blog" className="hover:underline">Blog</Link></li>
             </ul>
