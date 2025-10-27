@@ -30,9 +30,9 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-3">Contact</h4>
             <ul className="space-y-2 text-muted-foreground">
-              <li>help@importa.biz</li>
+              <li>hello@sayar.africa</li>
               <li>+234 809 776 9946</li>
-              <li>82 James Carter Road, UK</li>
+              <li>Lagos, Nigeria</li>
             </ul>
           </div>
         </div>
