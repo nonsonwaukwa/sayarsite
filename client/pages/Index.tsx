@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { CheckCircle2, Star, ShieldCheck, Truck, Wallet } from "lucide-react";
+import { CheckCircle2, Star, ShieldCheck, Truck, Wallet, ShoppingCart, Send } from "lucide-react";
 
 function Stat({ value, label }: { value: string; label: string }) {
   return (
@@ -38,15 +38,32 @@ export default function Index() {
               </div>
             </div>
             <div className="relative">
-              <div className="mx-auto h-[520px] max-w-[280px] rounded-[2.2rem] bg-gradient-to-b from-neutral-900 to-neutral-800 shadow-2xl p-2 ring-1 ring-black/10">
-                <div className="h-full rounded-[1.8rem] bg-neutral-950 p-4 flex flex-col text-white">
-                  <div className="text-sm text-white/70">Importa</div>
-                  <div className="mt-auto space-y-3">
-                    <div className="rounded-xl bg-white/5 p-3 backdrop-blur">
-                      Let us help you source the best bags at factory prices.
+              <div className="mx-auto h-[520px] max-w-[280px] rounded-[2.2rem] bg-neutral-900/90 shadow-2xl p-2 ring-1 ring-black/10">
+                <div className="h-full rounded-[1.8rem] overflow-hidden flex flex-col">
+                  {/* Header */}
+                  <div className="bg-[#075e54] text-white px-4 py-3 flex items-center gap-2">
+                    <div className="h-7 w-7 rounded-full bg-white/20" />
+                    <div className="leading-tight">
+                      <div className="text-sm font-semibold">Importa</div>
+                      <div className="text-[10px] text-white/80">online</div>
                     </div>
-                    <div className="rounded-xl bg-primary/20 p-3 text-white">
-                      Your quote is ready! Approve to proceed.
+                  </div>
+                  {/* Chat */}
+                  <div className="flex-1 bg-neutral-900 px-3 py-4 space-y-2 text-[12px]">
+                    <div className="max-w-[80%] rounded-lg bg-white/10 text-white px-3 py-2">Hello! What are you looking to import today?</div>
+                    <div className="max-w-[80%] ml-auto rounded-lg bg-[#dcf8c6] text-black px-3 py-2 shadow">Hi Importa, I'd like 50 leather tote bags in black. Please add to my cart.</div>
+                    <div className="max-w-[80%] rounded-lg bg-white px-3 py-2 text-black shadow">
+                      <div className="flex items-center gap-2 text-[11px] font-semibold"><ShoppingCart className="h-3 w-3 text-primary" /> Cart</div>
+                      <div className="mt-1 text-[11px]">Leather Tote Bag × 50 • Black</div>
+                      <div className="mt-1 text-[11px] font-medium">$9.50/unit • Est. 7–10 days</div>
+                    </div>
+                    <div className="max-w-[80%] ml-auto rounded-lg bg-[#dcf8c6] text-black px-3 py-2 shadow">Sounds good. Please send invoice.</div>
+                  </div>
+                  {/* Input */}
+                  <div className="px-3 py-3 bg-neutral-900 flex items-center gap-2">
+                    <div className="flex-1 h-8 rounded-full bg-white/10" />
+                    <div className="h-8 w-8 rounded-full bg-primary grid place-items-center text-white">
+                      <Send className="h-4 w-4" />
                     </div>
                   </div>
                 </div>
