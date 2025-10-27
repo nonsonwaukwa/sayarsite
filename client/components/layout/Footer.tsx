@@ -47,7 +47,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t py-6 text-center text-sm text-muted-foreground">
-        © {new Date().getFullYear()} Importa. All rights reserved.
+        © {new Date().getFullYear()} Sayar. All rights reserved.
       </div>
     </footer>
   );
