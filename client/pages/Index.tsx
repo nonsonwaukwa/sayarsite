@@ -119,7 +119,7 @@ export default function Index() {
 
       {/* How it works */}
       <section className="py-16">
-        <div className="container text-center">
+        <div className="container text-center" style={{padding: "0 57px 0 46px"}}>
           <div className="inline-flex items-center rounded-full bg-secondary px-3 py-1 text-xs font-medium">How it Works</div>
           <h2 className="mt-3 text-3xl md:text-4xl font-extrabold tracking-tight">Here's How Sayar Works</h2>
           <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">Follow three simple steps to convert chat into confirmed orders.</p>
@@ -143,7 +143,7 @@ export default function Index() {
       </section>
 
       {/* Benefits */}
-      <section className="py-16">
+      <section className="py-16" style={{padding: "64px 24px 64px 25px"}}>
         <div className="container text-center">
           <div className="inline-flex items-center rounded-full bg-secondary px-3 py-1 text-xs font-medium">Benefits</div>
           <h2 className="mt-3 text-3xl md:text-4xl font-extrabold tracking-tight">✨ 4–5 Word Benefits</h2>
@@ -192,8 +192,8 @@ export default function Index() {
 
       {/* FAQ */}
       <section className="py-16 bg-accent/40">
-        <div className="container grid md:grid-cols-2 gap-10 items-start">
-          <div>
+        <div className="container grid md:grid-cols-2 gap-10 items-start" style={{padding: "0 73px 0 32px"}}>
+          <div style={{marginLeft: "35px"}}>
             <h3 className="text-2xl md:text-3xl font-extrabold tracking-tight">Got Questions? We’ve Got Answers</h3>
             <p className="mt-2 text-muted-foreground">Click a question to see more details. Still need help? Reach out to us.</p>
             <div className="mt-6 flex gap-3">
