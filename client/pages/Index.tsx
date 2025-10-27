@@ -143,6 +143,41 @@ export default function Index() {
         </div>
       </section>
 
+      {/* Sayar Overview */}
+      <section className="py-16 bg-white">
+        <div className="container grid md:grid-cols-2 gap-10 items-start">
+          <div>
+            <div className="inline-flex items-center rounded-full bg-secondary px-3 py-1 text-xs font-medium">Sayar Overview</div>
+            <h2 className="mt-3 text-3xl md:text-4xl font-extrabold tracking-tight">WhatsApp-first commerce for Nigerian SMEs</h2>
+            <p className="mt-4 text-muted-foreground">Sayar is a WhatsApp-first commerce platform that helps merchants sell, manage orders, and engage customers directly inside WhatsApp — no website or coding skills required.</p>
+
+            <h4 className="mt-6 font-semibold">Mission</h4>
+            <p className="text-muted-foreground">Help Nigerian merchants turn WhatsApp chats into organized, automated sales.</p>
+
+            <h4 className="mt-6 font-semibold">Core features</h4>
+            <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
+              <li>• WhatsApp Automation: auto-replies, order confirmation, and checkout flows.</li>
+              <li>• Smart Catalog Sync: import products and share live catalogs inside chat.</li>
+              <li>• Payments: accept Naira payments via Paystack & Korapay.</li>
+              <li>• Dashboard: track orders, customers, and GMV in one place.</li>
+            </ul>
+          </div>
+
+          <div>
+            <div className="inline-flex items-center rounded-full bg-secondary px-3 py-1 text-xs font-medium">The problem</div>
+            <h3 className="mt-3 text-2xl font-semibold">Chat commerce is messy</h3>
+            <p className="mt-3 text-muted-foreground">Over 67% of online purchases in Nigeria start as chats, but most merchants manage sales manually across messages, DMs, and spreadsheets. That leads to missed sales, scattered records and poor repeat-purchase experiences.</p>
+
+            <h4 className="mt-6 font-semibold">Why Sayar</h4>
+            <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
+              <li>• Zero technical barrier — setup in minutes.</li>
+              <li>• Local focus: Naira payments, local UX & distribution.</li>
+              <li>• Automation reduces missed messages and speeds up conversions.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials */}
       <section className="py-16">
         <div className="container text-center">
