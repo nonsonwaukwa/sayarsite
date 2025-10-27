@@ -11,7 +11,7 @@ export default function Footer() {
             <span className="inline-flex h-8 w-8 items-center justify-center rounded-md bg-gradient-to-br from-primary to-primary/70 shadow-sm">
               <svg viewBox="0 0 24 24" className="h-5 w-5 text-white" fill="currentColor"><path d="M3 5h18v2H3zM3 11h14v2H3zM3 17h10v2H3z"/></svg>
             </span>
-            <span className="font-extrabold tracking-tight text-xl">Importa</span>
+            <span className="font-extrabold tracking-tight text-xl">Sayar</span>
           </div>
           <p className="mt-4 text-sm text-muted-foreground max-w-sm">
             Importa makes ordering from global suppliers simple, fast, and budget-friendly. Chat, track, and receive with ease.
