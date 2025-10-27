@@ -5,8 +5,8 @@ import { cn } from "@/lib/utils";
 
 const nav = [
   { to: "/", label: "Home" },
-  { to: "/products", label: "Products" },
-  { to: "/track", label: "Track Order" },
+  { to: "/products", label: "Features" },
+  { to: "/track", label: "Dashboard" },
   { to: "/faq", label: "FAQs" },
   { to: "/blog", label: "Blog" },
 ];
@@ -19,7 +19,7 @@ export default function Header() {
           <span className="inline-flex h-8 w-8 items-center justify-center rounded-md bg-gradient-to-br from-primary to-primary/70 shadow-sm">
             <svg viewBox="0 0 24 24" className="h-5 w-5 text-white" fill="currentColor"><path d="M3 5h18v2H3zM3 11h14v2H3zM3 17h10v2H3z"/></svg>
           </span>
-          <span className="font-extrabold tracking-tight text-xl">Importa</span>
+          <span className="font-extrabold tracking-tight text-xl">Sayar</span>
         </Link>
         <nav className="ml-6 hidden md:flex items-center gap-1">
           {nav.map((n) => (
@@ -40,7 +40,7 @@ export default function Header() {
         </nav>
         <div className="ml-auto hidden md:flex items-center gap-3">
           <div className="w-56">
-            <Input placeholder="Search products" className="rounded-full h-9" />
+            <Input placeholder="Search merchants or features" className="rounded-full h-9" />
           </div>
           <Button className="rounded-full h-9 px-5">Get Started</Button>
         </div>
