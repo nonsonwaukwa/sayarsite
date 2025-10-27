@@ -74,11 +74,10 @@ export default function Index() {
 
         {/* KPI band */}
         <div className="bg-primary">
-          <div className="container py-8 grid grid-cols-2 md:grid-cols-4 gap-6">
-            <Stat value="1.2k+" label="Active Merchants" />
-            <Stat value="₦45M+" label="Monthly GMV" />
-            <Stat value="8k+" label="Orders / month" />
-            <Stat value="92%" label="Merchant Satisfaction" />
+          <div className="container py-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+            <Stat value="20+" label="Merchants on our waitlist" />
+            <Stat value="Meta Cloud" label="Built on Meta Cloud API for reliability & scale" />
+            <Stat value="3 min" label="Setup — sell instantly from WhatsApp" />
           </div>
         </div>
       </section>
