@@ -10,6 +10,8 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Layout from "@/components/layout/Layout";
 import Placeholder from "./pages/Placeholder";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 
 const queryClient = new QueryClient();
 
@@ -57,6 +59,22 @@ const App = () => (
             element={
               <Layout>
                 <Placeholder />
+              </Layout>
+            }
+          />
+          <Route
+            path="/privacy"
+            element={
+              <Layout>
+                <Privacy />
+              </Layout>
+            }
+          />
+          <Route
+            path="/terms"
+            element={
+              <Layout>
+                <Terms />
               </Layout>
             }
           />

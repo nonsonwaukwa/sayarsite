@@ -1,6 +1,15 @@
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 
+const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  e.preventDefault();
+  const targetId = href.replace('#', '');
+  const element = document.getElementById(targetId);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+};
+
 export default function Footer() {
   return (
     <footer className="border-t bg-white">
@@ -17,34 +26,43 @@ export default function Footer() {
         <div className="grid grid-cols-2 gap-6 text-sm">
           <div>
             <h4 className="font-semibold mb-3">Company</h4>
-            <ul className="space-y-2">
+            <ul className="space-y-2 text-muted-foreground">
               <li>
-                <Link to="/products" className="hover:underline">
-                  Features
-                </Link>
+                <a href="#how-it-works" onClick={(e) => scrollToSection(e, '#how-it-works')} className="hover:underline hover:text-foreground">
+                  How It Works
+                </a>
               </li>
               <li>
-                <Link to="/track" className="hover:underline">
-                  Dashboard
-                </Link>
+                <a href="#benefits" onClick={(e) => scrollToSection(e, '#benefits')} className="hover:underline hover:text-foreground">
+                  Benefits
+                </a>
               </li>
+             
               <li>
-                <Link to="/faq" className="hover:underline">
+                <a href="#faq" onClick={(e) => scrollToSection(e, '#faq')} className="hover:underline hover:text-foreground">
                   FAQs
-                </Link>
-              </li>
-              <li>
-                <Link to="/blog" className="hover:underline">
-                  Blog
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold mb-3">Contact</h4>
+            <h4 className="font-semibold mb-3">Legal</h4>
             <ul className="space-y-2 text-muted-foreground">
-              <li>hello@sayar.africa</li>
-              <li>+234 809 776 9946</li>
+              <li>
+                <Link to="/privacy" className="hover:underline hover:text-foreground">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link to="/terms" className="hover:underline hover:text-foreground">
+                  Terms of Service
+                </Link>
+              </li>
+            </ul>
+            <h4 className="font-semibold mb-3 mt-6">Contact</h4>
+            <ul className="space-y-2 text-muted-foreground">
+              <li>hello@usesayar.com</li>
+              <li>+234 802 367 2476</li>
               <li>Lagos, Nigeria</li>
             </ul>
           </div>
@@ -72,7 +90,17 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t py-6 text-center text-sm text-muted-foreground">
-        © {new Date().getFullYear()} Sayar. All rights reserved.
+        <div className="flex flex-wrap items-center justify-center gap-4">
+          <span>© {new Date().getFullYear()} Sayar. All rights reserved.</span>
+          <span className="hidden sm:inline">•</span>
+          <Link to="/privacy" className="hover:underline hover:text-foreground">
+            Privacy Policy
+          </Link>
+          <span className="hidden sm:inline">•</span>
+          <Link to="/terms" className="hover:underline hover:text-foreground">
+            Terms of Service
+          </Link>
+        </div>
       </div>
     </footer>
   );
