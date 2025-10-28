@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { Link } from "react-router-dom";
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 
 export default function Footer() {
@@ -7,18 +6,9 @@ export default function Footer() {
     <footer className="border-t bg-white">
       <div className="container py-12 grid gap-8 md:grid-cols-3">
         <div>
-          <div className="flex items-center gap-2">
-            <span className="inline-flex h-8 w-8 items-center justify-center rounded-md bg-gradient-to-br from-primary to-primary/70 shadow-sm">
-              <svg
-                viewBox="0 0 24 24"
-                className="h-5 w-5 text-white"
-                fill="currentColor"
-              >
-                <path d="M3 5h18v2H3zM3 11h14v2H3zM3 17h10v2H3z" />
-              </svg>
-            </span>
-            <span className="font-extrabold tracking-tight text-xl">Sayar</span>
-          </div>
+          <Link to="/" className="inline-block">
+            <img src="/logo.png" alt="Sayar" className="h-11" />
+          </Link>
           <p className="mt-4 text-sm text-muted-foreground max-w-sm">
             Sayar turns WhatsApp into a commerce engine for Nigerian
             SMEs—automated orders, Naira payments, and simple order management.

@@ -1,65 +1,52 @@
-import { Link, NavLink } from "react-router-dom";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { cn } from "@/lib/utils";
+import { MessageCircle } from "lucide-react";
 
 const nav = [
-  { to: "/", label: "Home" },
-  { to: "/products", label: "Features" },
-  { to: "/track", label: "Dashboard" },
-  { to: "/faq", label: "FAQs" },
-  { to: "/blog", label: "Blog" },
+  { to: "#how-it-works", label: "How It Works" },
+  { to: "#benefits", label: "Benefits" },
+  { to: "#pricing", label: "Pricing" },
+  { to: "#faq", label: "Contact" },
 ];
+
+const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  e.preventDefault();
+  const targetId = href.replace('#', '');
+  const element = document.getElementById(targetId);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+};
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-40 w-full border-b bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60">
-      <div className="container flex h-16 items-center gap-4">
-        <Link to="/" className="flex items-center gap-2">
-          <span className="inline-flex h-8 w-8 items-center justify-center rounded-md bg-gradient-to-br from-primary to-primary/70 shadow-sm">
-            <svg
-              viewBox="0 0 24 24"
-              className="h-5 w-5 text-white"
-              fill="currentColor"
-            >
-              <path d="M3 5h18v2H3zM3 11h14v2H3zM3 17h10v2H3z" />
-            </svg>
-          </span>
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets%2F49abbfeca790452daf97372576a6ea68%2F35c8709fc1734797b8e8900865e4aab2?format=webp&width=800"
-            alt="Sayar logo"
-            className="h-8 object-contain"
-          />
-        </Link>
-        <nav className="ml-6 hidden md:flex items-center gap-1">
-          {nav.map((n) => (
-            <NavLink
-              key={n.to}
-              to={n.to}
-              className={({ isActive }) =>
-                cn(
-                  "px-3 py-2 rounded-md text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-secondary",
-                  isActive && "text-foreground bg-secondary",
-                )
-              }
-              end={n.to === "/"}
-            >
-              {n.label}
-            </NavLink>
-          ))}
-        </nav>
-        <div className="ml-auto hidden md:flex items-center gap-3">
-          <div className="w-56">
-            <Input
-              placeholder="Search merchants or features"
-              className="rounded-full h-9"
-            />
-          </div>
-          <Button className="rounded-full h-9 px-5">Get Started</Button>
-        </div>
-        <div className="ml-auto md:hidden">
-          <Button className="rounded-full h-9 px-5">Get Started</Button>
+    <header className="sticky top-0 z-40 w-full pt-4">
+      <div className="container">
+        <div className="flex items-center justify-between bg-white rounded-2xl shadow-md px-8 py-4">
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-2">
+            <img src="/logo.png" alt="Sayar" className="h-11" />
+          </Link>
+
+          {/* Navigation Links - Centered */}
+          <nav className="hidden md:flex items-center gap-8">
+            {nav.map((n) => (
+              <a
+                key={n.to}
+                href={n.to}
+                onClick={(e) => scrollToSection(e, n.to)}
+                className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
+              >
+                {n.label}
+              </a>
+            ))}
+          </nav>
+
+          {/* CTA Button */}
+          <Button className="rounded-full h-10 px-6 text-white flex items-center gap-2">
+            Get Started
+            <MessageCircle className="h-4 w-4" />
+          </Button>
         </div>
       </div>
     </header>

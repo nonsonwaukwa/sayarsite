@@ -1,6 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import {
   Accordion,
   AccordionContent,
@@ -15,7 +24,12 @@ import {
   Wallet,
   ShoppingCart,
   Send,
+  ShoppingBag,
+  Package,
+  CreditCard,
+  Tag,
 } from "lucide-react";
+import { useState } from "react";
 
 function Stat({ value, label }: { value: string; label: string }) {
   return (
@@ -29,46 +43,116 @@ function Stat({ value, label }: { value: string; label: string }) {
 }
 
 export default function Index() {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    businessName: "",
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Waitlist submission:", formData);
+    // TODO: Add API call to submit waitlist data
+    setIsDialogOpen(false);
+    // Reset form
+    setFormData({ name: "", email: "", businessName: "" });
+  };
+
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(1200px_600px_at_50%_-200px,rgba(253,234,200,0.9),transparent),linear-gradient(to_bottom,white,white)]" />
-        <div className="container" style={{ padding: "43px 32px 33px" }}>
-          <div
-            className="grid md:grid-cols-2 items-center gap-8"
-            style={{ paddingLeft: "37px", margin: "-2px 0 7px" }}
-          >
+      <section className="relative overflow-hidden bg-white">
+        {/* Animated background elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <ShoppingBag className="absolute top-20 left-[10%] w-12 h-12 text-[#ef5d50]/20 animate-float" style={{ animationDelay: '0s' }} />
+          <Package className="absolute top-32 right-[15%] w-14 h-14 text-primary/20 animate-float" style={{ animationDelay: '1s' }} />
+          <ShoppingCart className="absolute bottom-40 left-[20%] w-10 h-10 text-[#ef5d50]/20 animate-float" style={{ animationDelay: '2s' }} />
+          <CreditCard className="absolute top-48 left-[30%] w-12 h-12 text-primary/20 animate-float" style={{ animationDelay: '1.5s' }} />
+          <Tag className="absolute bottom-32 right-[25%] w-11 h-11 text-[#ef5d50]/20 animate-float" style={{ animationDelay: '0.5s' }} />
+          <Truck className="absolute top-64 right-[10%] w-13 h-13 text-primary/20 animate-float" style={{ animationDelay: '2.5s' }} />
+          <Wallet className="absolute bottom-20 left-[15%] w-10 h-10 text-[#ef5d50]/20 animate-float" style={{ animationDelay: '3s' }} />
+          <ShoppingBag className="absolute top-40 right-[30%] w-9 h-9 text-primary/20 animate-float" style={{ animationDelay: '1.2s' }} />
+        </div>
+        <div className="container" style={{ padding: "10px 60px 33px" }}>
+          <div className="grid md:grid-cols-2 items-center gap-8">
             <div>
               <div className="inline-flex items-center rounded-full bg-secondary px-3 py-1 text-xs font-medium text-foreground/70">
                 WhatsApp-first commerce
               </div>
               <h1 className="mt-4 text-4xl leading-tight font-extrabold tracking-tight md:text-5xl">
-                Help Nigerian merchants turn{" "}
-                <span className="text-primary">WhatsApp</span> chats into
-                organized, <span className="text-primary">automated</span> sales
+                <span className="text-[#ef5d50]">Automate </span> Your Orders.<br />
+                <span className="text-[#ef5d50]">Never Miss a Sale, </span> Even When You're Away.
               </h1>
               <p className="mt-4 text-muted-foreground max-w-xl">
                 Sayar helps merchants sell, accept Naira payments, and manage
                 orders directly inside WhatsApp — no website or coding required.
               </p>
               <div className="mt-6 flex flex-col sm:flex-row gap-3">
-                <Button className="rounded-full h-11 px-6">Get Started</Button>
-                <div className="relative flex-1 min-w-[260px]">
-                  <Input
-                    className="h-11 rounded-full pl-4 pr-12"
-                    placeholder="Describe the product or paste a WhatsApp message"
-                  />
-                  <Button
-                    className="absolute right-1 top-1 h-9 rounded-full px-4"
-                    size="sm"
-                  >
-                    Search
-                  </Button>
-                </div>
+                <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+                  <DialogTrigger asChild>
+                    <Button className="rounded-full h-11 px-8">Join Waitlist</Button>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-md">
+                    <DialogHeader>
+                      <DialogTitle>Join the Waitlist</DialogTitle>
+                      <DialogDescription>
+                        Be among the first to experience WhatsApp commerce with Sayar.
+                      </DialogDescription>
+                    </DialogHeader>
+                    <form onSubmit={handleSubmit} className="space-y-4 mt-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="name">Name *</Label>
+                        <Input
+                          id="name"
+                          placeholder="Your full name"
+                          value={formData.name}
+                          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                          required
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="email">Email *</Label>
+                        <Input
+                          id="email"
+                          type="email"
+                          placeholder="your@email.com"
+                          value={formData.email}
+                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                          required
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="businessName">Business Name (Optional)</Label>
+                        <Input
+                          id="businessName"
+                          placeholder="Your business name"
+                          value={formData.businessName}
+                          onChange={(e) => setFormData({ ...formData, businessName: e.target.value })}
+                        />
+                      </div>
+                      <Button type="submit" className="w-full rounded-full">
+                        Submit
+                      </Button>
+                    </form>
+                  </DialogContent>
+                </Dialog>
+                <Button
+                  variant="outline"
+                  className="rounded-full h-11 px-8 border-[#ef5d50] text-[#ef5d50] hover:bg-[#ef5d50] hover:text-white"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const element = document.getElementById('how-it-works');
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                  }}
+                >
+                  How It Works
+                </Button>
               </div>
             </div>
-            <div className="relative">
+            <div className="relative" style={{ paddingLeft: "50%" }}>
               <div className="mx-auto h-[520px] max-w-[280px] rounded-[2.2rem] bg-neutral-900/90 shadow-2xl p-2 ring-1 ring-black/10">
                 <div className="h-full rounded-[1.8rem] overflow-hidden flex flex-col">
                   {/* Header */}
@@ -92,7 +176,7 @@ export default function Index() {
                     </div>
                     <div className="max-w-[80%] rounded-lg bg-white px-3 py-2 text-black shadow">
                       <div className="flex items-center gap-2 text-[11px] font-semibold">
-                        <ShoppingCart className="h-3 w-3 text-primary" /> Cart
+                        <ShoppingCart className="h-3 w-3 text-[#ef5d50]" /> Cart
                       </div>
                       <div className="mt-1 text-[11px]">
                         Leather Tote Bag × 50 • Black
@@ -108,7 +192,7 @@ export default function Index() {
                   {/* Input */}
                   <div className="px-3 py-3 bg-neutral-900 flex items-center gap-2">
                     <div className="flex-1 h-8 rounded-full bg-white/10" />
-                    <div className="h-8 w-8 rounded-full bg-primary grid place-items-center text-white">
+                    <div className="h-8 w-8 rounded-full bg-[#ef5d50] grid place-items-center text-white">
                       <Send className="h-4 w-4" />
                     </div>
                   </div>
@@ -132,7 +216,7 @@ export default function Index() {
       </section>
 
       {/* Benefits */}
-      <section className="py-20">
+      <section id="benefits" className="py-20">
         <div className="container grid gap-10 md:grid-cols-2 items-center">
           <div className="mx-auto h-[520px] max-w-[280px] rounded-[2.2rem] bg-gradient-to-b from-neutral-900 to-neutral-800 shadow-2xl p-2 ring-1 ring-black/10">
             <div className="h-full rounded-[1.8rem] bg-neutral-950 p-4 flex flex-col text-white">
@@ -152,24 +236,29 @@ export default function Index() {
               Benefits
             </div>
             <h2 className="mt-3 text-3xl md:text-4xl font-extrabold tracking-tight">
-              Why Choose Sayar
+            Here's How Sayar Works
             </h2>
             <ul className="space-y-4" style={{ margin: "24px 0 0 -2px" }}>
               {[
-                {
-                  icon: <ShieldCheck className="text-primary" />,
-                  title: "WhatsApp Automation",
-                  desc: "Auto-replies, order confirmation and checkout flows inside chat.",
+                 {
+                  title: "Customer Messages You",
+                  desc: "Customer clicks your link or sends a message",
+                  icon: <CheckCircle2 className="text-[#ef5d50]" />,
                 },
                 {
-                  icon: <Truck className="text-primary" />,
-                  title: "Catalog & Orders",
-                  desc: "Share live product catalogs and record orders automatically.",
+                  title: "Browse Your Catalog",
+                  desc: "Full product catalog shows instantly in chat",
+                  icon: <ShoppingCart className="text-[#ef5d50]" />,
                 },
                 {
-                  icon: <Wallet className="text-primary" />,
-                  title: "Instant Naira Payments",
-                  desc: "Secure local payments via Paystack & Korapay integrations.",
+                  title: "Instant Checkout",
+                  desc: "Sayar creates checkout with payment and shipping",
+                  icon: <Wallet className="text-[#ef5d50]" />,
+                },
+                {
+                  title: "You Get Paid",
+                  desc: "Order confirmed, payment received—all automated",
+                  icon: <Truck className="text-[#ef5d50]" />,
                 },
               ].map((b) => (
                 <li key={b.title} className="flex gap-4">
@@ -187,52 +276,55 @@ export default function Index() {
       </section>
 
       {/* How it works */}
-      <section className="py-16">
+      <section id="how-it-works" className="py-16">
         <div
           className="container text-center"
           style={{ padding: "0 57px 0 46px" }}
         >
           <div className="inline-flex items-center rounded-full bg-secondary px-3 py-1 text-xs font-medium">
-            How it Works
+          Why Choose Sayar
           </div>
           <h2 className="mt-3 text-3xl md:text-4xl font-extrabold tracking-tight">
-            Here's How Sayar Works
+          More Sales, Less Stress
+
           </h2>
           <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
-            Follow three simple steps to convert chat into confirmed orders.
-          </p>
+          Sayar helps small businesses save time, close more sales, and stay organized — all inside WhatsApp.
 
-          <div className="mt-10 grid md:grid-cols-3 gap-6 items-start">
+</p>
+
+          <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
             {[
               {
-                title: "Chat",
-                desc: "Merchant receives structured order in WhatsApp.",
-                icon: <CheckCircle2 className="text-primary" />,
+                icon: <ShieldCheck className="text-[#ef5d50]" />,
+                title: "WhatsApp Automation",
+                desc: "Auto-replies, order confirmation and checkout flows inside chat.",
               },
               {
-                title: "Checkout",
-                desc: "Collect Naira payments and issue receipts automatically.",
-                icon: <Wallet className="text-primary" />,
+                icon: <Truck className="text-[#ef5d50]" />,
+                title: "Catalog & Orders",
+                desc: "Share live product catalogs and record orders automatically.",
               },
               {
-                title: "Dashboard",
-                desc: "Track orders, customers and revenue from one place.",
-                icon: <Truck className="text-primary" />,
+                icon: <Wallet className="text-[#ef5d50]" />,
+                title: "Instant Naira Payments",
+                desc: "Secure local payments via Paystack & Korapay integrations.",
               },
+              
             ].map((s) => (
-              <Card key={s.title} className="p-6 text-left">
+              <Card key={s.title} className="p-6 text-left h-full flex flex-col">
                 <div className="flex items-center gap-3">
                   {s.icon}
                   <div className="font-semibold">{s.title}</div>
                 </div>
-                <p className="mt-2 text-sm text-muted-foreground">{s.desc}</p>
+                <p className="mt-2 text-sm text-muted-foreground flex-grow">{s.desc}</p>
               </Card>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Benefits */}
+      {/* Benefits 
       <section className="py-16" style={{ padding: "64px 24px 64px 25px" }}>
         <div className="container text-center">
           <div className="inline-flex items-center rounded-full bg-secondary px-3 py-1 text-xs font-medium">
@@ -264,8 +356,8 @@ export default function Index() {
           </div>
         </div>
       </section>
-
-      {/* Testimonials */}
+      */}
+      {/* Testimonials
       <section className="py-16">
         <div className="container text-center">
           <div className="inline-flex items-center rounded-full bg-secondary px-3 py-1 text-xs font-medium">
@@ -281,7 +373,7 @@ export default function Index() {
                   {[...Array(5)].map((_, idx) => (
                     <Star
                       key={idx}
-                      className="h-4 w-4 text-primary fill-primary"
+                      className="h-4 w-4 text-[#ef5d50] fill-[#ef5d50]"
                     />
                   ))}
                 </div>
@@ -295,9 +387,9 @@ export default function Index() {
           </div>
         </div>
       </section>
-
+      */}
       {/* FAQ */}
-      <section className="py-16 bg-accent/40">
+      <section id="faq" className="py-16 bg-accent/40">
         <div
           className="container grid md:grid-cols-2 gap-10 items-start"
           style={{ padding: "0 73px 0 32px" }}
@@ -347,27 +439,80 @@ export default function Index() {
       </section>
 
       {/* CTA band */}
-      <section className="py-16 relative">
-        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-primary to-amber-500" />
+      <section id="pricing" className="py-16 relative bg-primary">
         <div className="container text-center text-white">
           <h3 className="text-2xl md:text-3xl font-extrabold tracking-tight">
-            Your affordable ordering starts here
+            Turn Your WhatsApp Into a Sales Engine
           </h3>
           <p className="mt-2 text-white/90">
-            Start automating sales on Sayar today
+            Join 20+ merchants automating orders and payments on WhatsApp
           </p>
           <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
-            <Button
-              variant="secondary"
-              className="rounded-full bg-white text-foreground hover:bg-white/90"
-            >
-              Get started now
-            </Button>
+            <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+              <DialogTrigger asChild>
+                <Button
+                  variant="secondary"
+                  className="rounded-full bg-white text-foreground hover:bg-white/90"
+                >
+                  Join Waitlist
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-md">
+                <DialogHeader>
+                  <DialogTitle>Join the Waitlist</DialogTitle>
+                  <DialogDescription>
+                    Be among the first to experience WhatsApp commerce with Sayar.
+                  </DialogDescription>
+                </DialogHeader>
+                <form onSubmit={handleSubmit} className="space-y-4 mt-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="cta-name">Name *</Label>
+                    <Input
+                      id="cta-name"
+                      placeholder="Your full name"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="cta-email">Email *</Label>
+                    <Input
+                      id="cta-email"
+                      type="email"
+                      placeholder="your@email.com"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="cta-businessName">Business Name (Optional)</Label>
+                    <Input
+                      id="cta-businessName"
+                      placeholder="Your business name"
+                      value={formData.businessName}
+                      onChange={(e) => setFormData({ ...formData, businessName: e.target.value })}
+                    />
+                  </div>
+                  <Button type="submit" className="w-full rounded-full">
+                    Submit
+                  </Button>
+                </form>
+              </DialogContent>
+            </Dialog>
             <Button
               variant="secondary"
               className="rounded-full bg-white/10 text-white hover:bg-white/20"
+              onClick={(e) => {
+                e.preventDefault();
+                const element = document.getElementById('benefits');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }}
             >
-              Track an order
+              Learn More
             </Button>
           </div>
         </div>

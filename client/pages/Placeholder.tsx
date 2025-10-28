@@ -1,7 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
 
-import { Link, useLocation } from "react-router-dom";
-
 export default function Placeholder() {
   const { pathname } = useLocation();
   const label = pathname.replace("/", "").replace(/-/g, " ") || "Home";
