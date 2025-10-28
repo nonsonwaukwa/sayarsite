@@ -145,7 +145,7 @@ export default function Header() {
               </DialogHeader>
               <form onSubmit={handleSubmit} className="space-y-4 mt-4">
                 <div className="space-y-2">
-                  <Label htmlFor="header-name">Name *</Label>
+                  <Label htmlFor="header-name">Name*</Label>
                   <Input
                     id="header-name"
                     placeholder="Your full name"
@@ -155,7 +155,7 @@ export default function Header() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="header-email">Email *</Label>
+                  <Label htmlFor="header-email">Email*</Label>
                   <Input
                     id="header-email"
                     type="email"
